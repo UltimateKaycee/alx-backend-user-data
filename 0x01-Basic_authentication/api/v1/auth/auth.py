@@ -42,7 +42,8 @@ class Auth:
 
     def authorization_header(self, request=None) -> str:
         """
-        Function to return authorization header from a request object
+        Function to return authorization
+        header from a request object
         """
         if request is None:
             return None
