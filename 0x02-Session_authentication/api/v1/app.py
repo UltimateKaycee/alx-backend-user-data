@@ -33,8 +33,7 @@ elif AUTH_TYPE == "session_db_auth":
 
 @app.before_request
 def bef_req():
-    """
-    Function to filter each request before
+    """Function to filter each request before
     it's handled by route
     """
     if auth is None:
@@ -64,16 +63,14 @@ def not_found(error) -> str:
 
 @app.errorhandler(401)
 def unauthorized(error) -> str:
-    """
-    Function request unauthorized handler
+    """Function request unauthorized handler
     """
     return jsonify({"error": "Unauthorized"}), 401
 
 
 @app.errorhandler(403)
 def forbidden(error) -> str:
-    """
-    Function - request unauthorized handler
+    """Function - request unauthorized handler
     """
     return jsonify({"error": "Forbidden"}), 403
 
