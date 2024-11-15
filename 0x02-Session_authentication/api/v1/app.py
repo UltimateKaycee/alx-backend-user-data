@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Module - route for the API
+Module route for API
 """
 from os import getenv
 from api.v1.views import app_views
@@ -35,7 +35,7 @@ elif AUTH_TYPE == "session_db_auth":
 def bef_req():
     """
     Function to filter each request before
-    it's handled by the proper route
+    it's handled by route
     """
     if auth is None:
         pass
@@ -57,21 +57,24 @@ def bef_req():
 
 @app.errorhandler(404)
 def not_found(error) -> str:
-    """ Function for not found handler
+    """ 
+    Function - not found handler
     """
     return jsonify({"error": "Not found"}), 404
 
 
 @app.errorhandler(401)
 def unauthorized(error) -> str:
-    """ Function request for unauthorized handler
+    """ 
+    Function request unauthorized handler
     """
     return jsonify({"error": "Unauthorized"}), 401
 
 
 @app.errorhandler(403)
 def forbidden(error) -> str:
-    """ Function request unauthorized handler
+    """ 
+    Function - request unauthorized handler
     """
     return jsonify({"error": "Forbidden"}), 403
 
