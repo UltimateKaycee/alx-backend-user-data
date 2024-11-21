@@ -95,7 +95,7 @@ class Auth:
 
     def get_user_from_session_id(self, session_id: str) -> Union[None, U]:
         """
-        Function to take session_id and return corresponding user, if one exists,
+        Function to take session_id, return corresponding user, if one exists,
         otherwise return None
         Args:
             session_id (str): user's session id
